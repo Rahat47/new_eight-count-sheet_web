@@ -6,6 +6,8 @@
         "@chakra-ui/react": "^1.7.4",
         "@emotion/react": "^11",
         "@emotion/styled": "^11",
+        "@fontsource/open-sans": "^4.5.2",
+        "@fontsource/raleway": "^4.5.0",
         "@reduxjs/toolkit": "^1.5.1",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
@@ -13,6 +15,7 @@
         "framer-motion": "^5",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+        "react-icons": "^4.3.1",
         "react-redux": "^7.2.3",
         "react-router-dom": "^6.2.1",
         "react-scripts": "5.0.0"
@@ -37,9 +40,5 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    },
-    "packageManager": "yarn@3.1.1",
-    "devDependencies": {
-        "@types/testing-library__jest-dom": "^5.14.2"
     }
 }

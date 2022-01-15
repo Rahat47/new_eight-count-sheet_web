@@ -9,6 +9,7 @@ import {
     selectCount,
 } from './counterSlice';
 import styles from './Counter.module.css';
+import { chakra } from '@chakra-ui/react';
 
 export function Counter() {
     const count = useSelector(selectCount);
@@ -43,12 +44,13 @@ export function Counter() {
                     value={incrementAmount}
                     onChange={e => setIncrementAmount(e.target.value)}
                 />
-                <button
+                <chakra.button
                     className={styles.button}
                     onClick={() => dispatch(incrementByAmount(incrementValue))}
+                    aria-label='Increment value by amount'
                 >
                     Add Amount
-                </button>
+                </chakra.button>
                 <button
                     className={styles.asyncButton}
                     onClick={() => dispatch(incrementAsync(incrementValue))}
