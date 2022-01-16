@@ -7,9 +7,9 @@ const theme = extendTheme({
     },
     colors: {
         brand: {
-            primary: '#EF2F88',
-            secondary: '#FFCD00',
-            tertiary: '#FFF',
+            primary: '#E60965',
+            secondary: '#F94892',
+            tertiary: '#FBE5E5',
         }
     }
 })
