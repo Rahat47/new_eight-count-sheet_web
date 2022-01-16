@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import '@fontsource/raleway';
 import '@fontsource/open-sans';
+import '@fontsource/poppins';
 import theme from './styles/theme';
 
 ReactDOM.render(

@@ -2,6 +2,7 @@ import { chakra } from '@chakra-ui/react';
 import { Counter } from './features/counter/Counter';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 function App() {
     return (
@@ -17,7 +18,7 @@ function App() {
             </chakra.main>
 
             <chakra.footer>
-                <Counter />
+                <Footer />
             </chakra.footer>
         </>
     );
