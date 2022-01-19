@@ -10,6 +10,7 @@ import './index.css';
 import '@fontsource/raleway';
 import '@fontsource/open-sans';
 import '@fontsource/poppins';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import theme from './styles/theme';
 
 ReactDOM.render(

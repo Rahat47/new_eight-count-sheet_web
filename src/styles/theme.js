@@ -10,6 +10,7 @@ const theme = extendTheme({
             primary: '#E60965',
             secondary: '#F94892',
             tertiary: '#FBE5E5',
+            secondaryAlpha: 'rgba(249, 72, 146, 0.5)',
         }
     }
 })
