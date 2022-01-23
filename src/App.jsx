@@ -4,8 +4,10 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Loading from './components/Loading/Loading';
+// import Auth from './pages/Auth';
 // Lazy components
 const Landing = lazy(() => import('./pages/Landing'));
+const Auth = lazy(() => import('./pages/Auth'));
 
 function App() {
     return (
@@ -21,6 +23,15 @@ function App() {
                         element={
                             <Suspense fallback={<Loading />}>
                                 <Landing />
+                            </Suspense>
+                        }
+                    />
+
+                    <Route
+                        path={'/auth/:action'}
+                        element={
+                            <Suspense fallback={<Loading />}>
+                                <Auth />
                             </Suspense>
                         }
                     />
