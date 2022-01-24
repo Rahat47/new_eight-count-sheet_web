@@ -2,6 +2,7 @@ import {
     Box,
     Flex,
     FormControl,
+    FormErrorMessage,
     FormLabel,
     IconButton,
     Input,
@@ -34,9 +35,13 @@ const PasswordField = forwardRef((props, ref) => {
     };
 
     return (
-        <FormControl id='password' isRequired>
+        <FormControl
+            id='password'
+            isRequired
+            isInvalid={props?.errors?.password}
+        >
             <Flex justify='space-between'>
-                <FormLabel>Password</FormLabel>
+                <FormLabel htmlFor='password'>Password</FormLabel>
                 {props.showForgot && (
                     <Box
                         color={mode('blue.600', 'blue.200')}
@@ -61,13 +66,19 @@ const PasswordField = forwardRef((props, ref) => {
                 </InputRightElement>
                 <Input
                     ref={mergeRef}
-                    name='password'
+                    id='password'
                     type={isOpen ? 'text' : 'password'}
                     autoComplete='current-password'
                     required
-                    {...props}
+                    placeholder='Password'
+                    {...props.register('password', {
+                        required: 'Password is required',
+                    })}
                 />
             </InputGroup>
+            <FormErrorMessage>
+                {props?.errors?.password && props?.errors?.password?.message}
+            </FormErrorMessage>
         </FormControl>
     );
 });

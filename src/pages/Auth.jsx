@@ -5,6 +5,7 @@ import LoginForm from '../components/AuthComponents/LoginForm';
 import Logo from '../components/Logo/Logo';
 import { useParams, Link } from 'react-router-dom';
 import SocialLogin from '../components/AuthComponents/SocialLogin';
+import SignupForm from '../components/AuthComponents/SignupForm';
 
 const Auth = () => {
     const { action } = useParams();
@@ -51,7 +52,7 @@ const Auth = () => {
                     </Link>
                 </Text>
                 <Card>
-                    <LoginForm />
+                    {action === 'login' ? <LoginForm /> : <SignupForm />}
 
                     <DividerWithText mt='6'>or continue with</DividerWithText>
 
