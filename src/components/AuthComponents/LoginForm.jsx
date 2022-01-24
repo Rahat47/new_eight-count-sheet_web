@@ -74,7 +74,7 @@ const LoginForm = props => {
 
                 <Button
                     type='submit'
-                    colorScheme='blue'
+                    colorScheme='pink'
                     size='lg'
                     fontSize='md'
                     isLoading={isSubmitting}

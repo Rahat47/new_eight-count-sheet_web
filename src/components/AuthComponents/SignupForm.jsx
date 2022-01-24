@@ -93,12 +93,12 @@ const SignupForm = props => {
                 <PasswordField errors={errors} register={register} />
                 <Button
                     type='submit'
-                    colorScheme='blue'
+                    colorScheme='pink'
                     size='lg'
                     fontSize='md'
                     isLoading={isSubmitting}
                 >
-                    Sign in
+                    Sign up
                 </Button>
             </Stack>
         </chakra.form>
