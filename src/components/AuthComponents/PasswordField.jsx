@@ -71,9 +71,7 @@ const PasswordField = forwardRef((props, ref) => {
                     autoComplete='current-password'
                     required
                     placeholder='Password'
-                    {...props.register('password', {
-                        required: 'Password is required',
-                    })}
+                    {...props.register('password')}
                 />
             </InputGroup>
             <FormErrorMessage>

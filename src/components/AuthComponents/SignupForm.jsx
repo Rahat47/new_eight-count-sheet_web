@@ -10,13 +10,28 @@ import {
 } from '@chakra-ui/react';
 import PasswordField from './PasswordField';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup
+    .object({
+        username: yup.string().required('username is required'),
+        email: yup
+            .string()
+            .email('email is invalid')
+            .required('email is required'),
+        password: yup.string().required('password is required'),
+    })
+    .required('Please fill out all fields');
 
 const SignupForm = props => {
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
-    } = useForm();
+    } = useForm({
+        resolver: yupResolver(schema),
+    });
 
     const toast = useToast({
         position: 'top-right',
@@ -53,14 +68,7 @@ const SignupForm = props => {
                         type='text'
                         required
                         placeholder='Enter your username'
-                        {...register('username', {
-                            required: 'username is required',
-                            minLength: {
-                                value: 3,
-                                message:
-                                    'username must be at least 3 characters',
-                            },
-                        })}
+                        {...register('username')}
                     />
                     <FormErrorMessage>
                         {errors.username && errors.username.message}
@@ -75,9 +83,7 @@ const SignupForm = props => {
                         autoComplete='email'
                         required
                         placeholder='Email address'
-                        {...register('email', {
-                            required: 'Email is required',
-                        })}
+                        {...register('email')}
                     />
                     <FormErrorMessage>
                         {errors.email && errors.email.message}

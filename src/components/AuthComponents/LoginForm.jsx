@@ -10,6 +10,18 @@ import {
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import PasswordField from './PasswordField';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+const schema = yup
+    .object({
+        email: yup
+            .string()
+            .email('email is invalid')
+            .required('email is required'),
+        password: yup.string().required('password is required'),
+    })
+    .required('Please fill out all fields');
 
 const LoginForm = props => {
     const toast = useToast({
@@ -22,7 +34,9 @@ const LoginForm = props => {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
-    } = useForm();
+    } = useForm({
+        resolver: yupResolver(schema),
+    });
 
     const onSubmit = data => {
         // your login logic here
@@ -48,9 +62,7 @@ const LoginForm = props => {
                         id='email'
                         type='email'
                         placeholder='Email address'
-                        {...register('email', {
-                            required: 'Email is required',
-                        })}
+                        {...register('email')}
                     />
 
                     <FormErrorMessage>
